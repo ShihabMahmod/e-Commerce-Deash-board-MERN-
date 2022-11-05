@@ -77,7 +77,8 @@ app.post('/add-product',uploads,(req,resp)=>{
 
 app.get('/product-list',async(req,resp)=>{
     let result = await productList();
-   resp.send(result);
+    resp.send(result);
+    resp.download('./uploads/'+req.params);
 });
 
 app.get("/single-product/:id",async(req,resp)=>{
